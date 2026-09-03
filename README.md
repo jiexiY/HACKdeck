@@ -1,56 +1,74 @@
 # HACKdeck
 
-[English](README.md) | [简体中文](README.zh-CN.md) | [Español](README.es.md)
+### Find the right event. See the timeline. Make room to build.
 
-HACKdeck is a public, multilingual tracker for verified hackathons, build weeks, and major AI/technology company programs. It presents opportunities as a connected chronological deck so builders can compare dates, deadlines, location, eligibility, format, prizes, and status.
+[Explore HACKdeck](https://hackdeck-app.vercel.app/) · [简体中文](README.zh-CN.md) · [Español](README.es.md)
 
-**Live site:** [hackdeck-app.vercel.app](https://hackdeck-app.vercel.app/)
+HACKdeck is a multilingual discovery platform for hackathons, build weeks, and developer programs. It turns scattered event announcements into a connected chronological deck, helping builders compare opportunities before committing their time.
 
-## Highlights
+## The experience
 
-- Verified company, university, global, remote, and build-week opportunities
-- Connected draggable timeline with chronologically aligned event cards
-- Filters for host, location, remote availability, dates, deadlines, prizes, eligibility, format, and status
-- Detailed event views with official or organizer source links
-- English, Mandarin Chinese, and Spanish interfaces
-- Saved hackathons stored locally in the browser
-- JSON export and import for portable backups
-- No account or sign-up required
+- **A draggable timeline:** browse chronologically aligned event cards and understand overlapping dates.
+- **Practical filters:** narrow opportunities by organizer, location, remote participation, dates, deadlines, prizes, eligibility, format, and status.
+- **Source-linked details:** inspect event information and follow official or organizer links.
+- **Three interface languages:** English, Mandarin Chinese, and Spanish.
+- **Local saves:** keep a shortlist in the browser without creating an account.
+- **Portable backups:** export saved information as JSON and import it in another browser or device.
+- **Responsive layout:** use the discovery flow across desktop and smaller screens.
+
+## Why a deck?
+
+An event directory answers what exists. Planning requires more: when applications close, which events overlap, whether participation is remote, and whether the opportunity fits a builder's interests and eligibility.
+
+HACKdeck brings those details together in a visual timeline. The interface is designed to make comparison and shortlisting easier without adding a registration barrier.
+
+## Using HACKdeck
+
+1. Open the [live site](https://hackdeck-app.vercel.app/).
+2. Choose a language and adjust the filters.
+3. Explore the timeline and open an event's details.
+4. Check the organizer's current information before applying.
+5. Save useful events and export a backup when moving between browsers.
+
+## Data quality and freshness
+
+The catalog is curated from official company, university, and organizer sources. A monitored organization is a discovery lead, not an event by itself.
+
+Event data is not a guaranteed real-time feed. Dates, eligibility, prizes, availability, and application rules can change. Check the original source before making plans. The data validator flags records that need maintenance, including ended events that still need archiving.
+
+## Engineering overview
+
+HACKdeck uses React 19, Vite, Tailwind CSS, Radix UI components, Lucide icons, and OGL visual effects.
+
+- `src/App.jsx` coordinates the timeline, filtering, details, and saved-event experience.
+- `src/data/events.js` contains event records and source metadata.
+- `src/data/i18n.js` provides interface translations.
+- `scripts/validate-events.mjs` checks catalog consistency.
+- `src/components/` contains reusable interface and visual components.
 
 ## Run locally
 
-Requirements: Node.js 20+ and pnpm.
+Use Node.js 20 or later and pnpm.
 
 ```bash
-pnpm install
+pnpm install --frozen-lockfile
 pnpm dev
 ```
 
-Open the local URL printed by Vite.
-
-## Validate and build
+Open the local address printed by Vite.
 
 ```bash
 pnpm validate:data
 pnpm build
+pnpm preview
 ```
 
-## Event data
-
-The verified feed lives in `src/data/events.js`. An event is included only when an official company page or organizer source confirms it. Monitored companies are discovery targets, not events by themselves.
-
-When updating the feed:
-
-1. Verify dates and event details against an official or organizer source.
-2. Deduplicate event IDs and source URLs.
-3. Archive ended events from the exported feed.
-4. Keep `feedMeta.sourceCount` aligned with `sourceCatalog`.
-5. Run the validation and production build commands above.
+Data-validation findings and compilation results are separate checks. Resolve catalog findings against the organizer's source before publishing an event-data update.
 
 ## Saved events and privacy
 
-Saved hackathons remain in the visitor's browser using local storage. HACKdeck does not require an account and does not upload saved-event data. Visitors can export a JSON backup and import it on another browser or device.
+Saved events stay in the visitor's browser through local storage; the application does not require an account or upload that shortlist. Clearing browser storage can remove saved information. Use JSON export and import for a portable backup; this is not automatic cross-device synchronization.
 
 ## Contributing
 
-Pull requests are welcome. For event additions or corrections, include the official company or organizer source that confirms the submitted information.
+For a new event or correction, provide an official or organizer source, preserve unknown details, check duplicate IDs and URLs, and archive ended events. Interface contributions should preserve keyboard access, readable labels, responsive behavior, and all three supported languages.

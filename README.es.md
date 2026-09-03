@@ -1,56 +1,67 @@
 # HACKdeck
 
-[English](README.md) | [简体中文](README.zh-CN.md) | [Español](README.es.md)
+### Encuentra el evento adecuado. Visualiza las fechas. Reserva tiempo para crear.
 
-HACKdeck es un rastreador público y multilingüe de hackatones verificados, build weeks y programas de grandes empresas de inteligencia artificial y tecnología. Presenta las oportunidades en una línea de tiempo cronológica conectada para que las personas creadoras puedan comparar fechas, plazos de solicitud, ubicaciones, requisitos, formatos, premios y estados.
+[Explorar HACKdeck](https://hackdeck-app.vercel.app/) · [English](README.md) · [简体中文](README.zh-CN.md)
 
-**Sitio web:** [hackdeck-app.vercel.app](https://hackdeck-app.vercel.app/)
+HACKdeck es una plataforma multilingüe para descubrir hackatones, build weeks y programas para desarrolladores. Organiza anuncios dispersos en una colección cronológica de tarjetas para comparar oportunidades antes de comprometer tiempo.
 
-## Funciones principales
+## Funciones
 
-- Oportunidades verificadas de empresas, universidades, programas globales, remotos y build weeks
-- Línea de tiempo conectada y desplazable con tarjetas ordenadas cronológicamente
-- Filtros por organizador, ubicación, participación remota, fechas, plazos, premios, requisitos, formato y estado
-- Vistas detalladas de cada evento con enlaces a la fuente oficial o de la organización
-- Interfaz disponible en inglés, chino mandarín simplificado y español
-- Hackatones guardados localmente en el navegador
-- Exportación e importación JSON para crear copias de seguridad portátiles
-- No requiere cuenta ni registro
+- Línea de tiempo desplazable con tarjetas ordenadas por fecha.
+- Filtros por organizador, ubicación, participación remota, fechas, plazos, premios, requisitos, formato y estado.
+- Detalles con enlaces a fuentes oficiales o de la organización.
+- Interfaces en inglés, chino mandarín simplificado y español.
+- Eventos guardados en el navegador sin crear una cuenta.
+- Exportación e importación JSON para trasladar una selección a otro navegador o dispositivo.
+- Diseño adaptable a pantallas grandes y pequeñas.
 
-## Ejecutar localmente
+## Enfoque del producto
 
-Requisitos: Node.js 20+ y pnpm.
+Un directorio muestra qué eventos existen. Para planificar también hay que entender los plazos, los solapamientos, las modalidades de participación y los requisitos. HACKdeck reúne esos detalles en una línea de tiempo visual para facilitar la comparación y la selección.
+
+## Cómo usarlo
+
+Abre el sitio, elige un idioma y ajusta los filtros. Explora las tarjetas y consulta los detalles. Comprueba la información actual del organizador antes de solicitar una plaza. Guarda los eventos que te interesen y exporta un archivo JSON si cambias de navegador.
+
+## Fuentes y actualización
+
+El catálogo se selecciona a partir de fuentes oficiales de empresas, universidades y organizadores. Una organización supervisada es una pista de búsqueda, no un evento confirmado.
+
+El catálogo no garantiza información en tiempo real. Las fechas, los requisitos, los premios y las reglas pueden cambiar. Consulta siempre la fuente original. El validador señala registros que necesitan mantenimiento, incluidos eventos finalizados pendientes de archivar.
+
+## Implementación
+
+El proyecto utiliza React 19, Vite, Tailwind CSS, Radix UI, iconos Lucide y efectos visuales OGL.
+
+- `src/App.jsx`: línea de tiempo, filtros, detalles y selección guardada.
+- `src/data/events.js`: eventos y metadatos de las fuentes.
+- `src/data/i18n.js`: traducciones de la interfaz.
+- `scripts/validate-events.mjs`: comprobaciones del catálogo.
+
+## Desarrollo local
+
+Requiere Node.js 20 o posterior y pnpm.
 
 ```bash
-pnpm install
+pnpm install --frozen-lockfile
 pnpm dev
 ```
 
-Abre en el navegador la dirección local que muestra Vite.
-
-## Validar y compilar
+Abre la dirección local indicada por Vite.
 
 ```bash
 pnpm validate:data
 pnpm build
+pnpm preview
 ```
 
-## Datos de eventos
+La validación de datos y la compilación son comprobaciones distintas. Revisa los hallazgos del catálogo contra las fuentes originales antes de publicar cambios en los eventos.
 
-El feed verificado se encuentra en `src/data/events.js`. Un evento solo se incluye cuando está confirmado por una página oficial de la empresa o por una fuente de la organización. Las empresas supervisadas son objetivos de descubrimiento, no eventos por sí mismas.
+## Privacidad
 
-Al actualizar el feed:
-
-1. Verifica las fechas y los detalles con una fuente oficial o de la organización.
-2. Elimina los identificadores de eventos y las URL de fuentes duplicados.
-3. Archiva los eventos finalizados para retirarlos del feed publicado.
-4. Mantén `feedMeta.sourceCount` alineado con `sourceCatalog`.
-5. Ejecuta los comandos de validación y compilación indicados arriba.
-
-## Eventos guardados y privacidad
-
-Los hackatones guardados permanecen en el navegador mediante almacenamiento local. HACKdeck no requiere una cuenta ni carga los datos guardados. Las personas visitantes pueden exportar una copia de seguridad JSON e importarla en otro navegador o dispositivo.
+Los eventos guardados permanecen en el almacenamiento local del navegador; no se necesita una cuenta ni se carga esa selección en un servidor. Borrar el almacenamiento puede eliminarla. La exportación e importación JSON permiten realizar copias de seguridad, pero no proporcionan sincronización automática entre dispositivos.
 
 ## Contribuir
 
-Las pull requests son bienvenidas. Para añadir o corregir un evento, incluye la fuente oficial de la empresa o de la organización que confirme la información enviada.
+Para añadir o corregir un evento, incluye una fuente oficial, conserva los datos desconocidos, revisa identificadores y enlaces duplicados, y archiva los eventos finalizados. Los cambios de interfaz deben mantener el acceso por teclado, las etiquetas claras, el diseño adaptable y los tres idiomas.
