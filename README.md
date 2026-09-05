@@ -11,6 +11,7 @@ HACKdeck is a multilingual discovery platform for hackathons, build weeks, and d
 - **A draggable timeline:** browse chronologically aligned event cards and understand overlapping dates.
 - **Practical filters:** narrow opportunities by organizer, location, remote participation, dates, deadlines, prizes, eligibility, format, and status.
 - **Source-linked details:** inspect event information and follow official or organizer links.
+- **Live catalog updates:** discover newly verified opportunities and event changes as they are published to the site.
 - **Three interface languages:** English, Mandarin Chinese, and Spanish.
 - **Local saves:** keep a shortlist in the browser without creating an account.
 - **Portable backups:** export saved information as JSON and import it in another browser or device.
@@ -30,11 +31,13 @@ HACKdeck brings those details together in a visual timeline. The interface is de
 4. Check the organizer's current information before applying.
 5. Save useful events and export a backup when moving between browsers.
 
-## Data quality and freshness
+## Live updates and data quality
 
 The catalog is curated from official company, university, and organizer sources. A monitored organization is a discovery lead, not an event by itself.
 
-Event data is not a guaranteed real-time feed. Dates, eligibility, prizes, availability, and application rules can change. Check the original source before making plans. The data validator flags records that need maintenance, including ended events that still need archiving.
+HACKdeck publishes live catalog updates as new opportunities and event changes are verified and released to the site. Updates may be delayed by regional differences in source availability or access, as well as verification and publishing time. Refresh the site to load the latest published catalog.
+
+Dates, eligibility, prizes, availability, and application rules can change. Check the original source before making plans. The data validator flags records that need maintenance, including ended events that still need archiving.
 
 ## Engineering overview
 
