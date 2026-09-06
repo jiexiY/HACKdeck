@@ -22,6 +22,7 @@ import {
 
 import { Badge } from "@/components/ui/badge"
 import { MetallicWordmark } from "@/components/brand/MetallicWordmark"
+import { GithubLink } from "@/components/GithubLink"
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -204,21 +205,24 @@ function LandingPage({ onStart, language, onLanguageChange }) {
   return (
     <main className="landing-page">
       <section className="landing-shell" aria-labelledby="landing-title">
-        <div className="landing-language">
-          <span className="landing-language-label"><Languages aria-hidden="true" />{copy.language}</span>
-          <Select value={language} onValueChange={onLanguageChange}>
-            <SelectTrigger className="landing-language-select" aria-label={copy.language}>
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-              {APP_LANGUAGES.map((option) => (
-                <SelectItem className="landing-language-option" key={option.value} value={option.value}>
-                  {option.label}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </div>
+        <header className="landing-header">
+          <div className="landing-language">
+            <span className="landing-language-label"><Languages aria-hidden="true" />{copy.language}</span>
+            <Select value={language} onValueChange={onLanguageChange}>
+              <SelectTrigger className="landing-language-select" aria-label={copy.language}>
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                {APP_LANGUAGES.map((option) => (
+                  <SelectItem className="landing-language-option" key={option.value} value={option.value}>
+                    {option.label}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+          <GithubLink language={language} />
+        </header>
 
         <div className="landing-hero">
           <h1 id="landing-title" className="visually-hidden">HACKdeck</h1>
@@ -1141,6 +1145,7 @@ function Tracker({ language, onLanguageChange }) {
       </div>
 
       <footer className="tracker-copyright">
+        <GithubLink language={language} />
         <p className="site-copyright" lang="en">Copyright © 2026 Jiexi Yang. All rights reserved.</p>
       </footer>
       {notice ? <div className="notice-toast" role="status"><Check />{notice}</div> : null}

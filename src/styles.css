@@ -259,16 +259,49 @@ input:focus-visible,
   pointer-events: none;
 }
 
-.landing-language,
+.landing-header,
 .landing-hero,
 .landing-footer {
   position: relative;
   z-index: 1;
 }
 
+.landing-header {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.github-link {
+  display: inline-flex;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.045);
+  color: #dce3df;
+  transition: color 150ms ease, background-color 150ms ease;
+}
+
+.github-link:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.github-link:focus-visible {
+  outline: 2px solid var(--hack-green);
+  outline-offset: 3px;
+}
+
 .landing-language {
   display: flex;
   width: min(320px, 100%);
+  min-width: 0;
   align-items: center;
   justify-content: space-between;
   gap: 14px;
@@ -293,6 +326,7 @@ input:focus-visible,
 
 .landing-language-select {
   width: 156px;
+  max-width: 52%;
   height: 40px;
   border-color: rgba(255, 255, 255, 0.14);
   border-radius: 8px;
@@ -399,6 +433,9 @@ input:focus-visible,
 }
 
 .tracker-copyright {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
   margin-top: 32px;
   padding-top: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
