@@ -65,3 +65,8 @@ Los eventos guardados permanecen en el almacenamiento local del navegador; no se
 ## Contribuir
 
 Para añadir o corregir un evento, incluye una fuente oficial, conserva los datos desconocidos, revisa identificadores y enlaces duplicados, y archiva los eventos finalizados. Los cambios de interfaz deben mantener el acceso por teclado, las etiquetas claras, el diseño adaptable y los tres idiomas.
+
+## Copyright
+
+Copyright © 2026 Jiexi Yang. All rights reserved.
+This project is publicly available for viewing and portfolio evaluation only.

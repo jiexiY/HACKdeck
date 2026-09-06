@@ -65,3 +65,8 @@ pnpm preview
 ## 参与贡献
 
 提交活动新增或更正时，请提供官方来源，保留未知信息，检查重复 ID 和网址，并归档已结束的活动。界面修改应保留键盘操作、清晰标签、响应式布局及三种语言支持。
+
+## Copyright
+
+Copyright © 2026 Jiexi Yang. All rights reserved.
+This project is publicly available for viewing and portfolio evaluation only.

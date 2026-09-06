@@ -245,6 +245,7 @@ function LandingPage({ onStart, language, onLanguageChange }) {
               <span key={track}>{track}{index < copy.tracks.length - 1 ? <i /> : null}</span>
             ))}
           </div>
+          <p className="site-copyright" lang="en">Copyright © 2026 Jiexi Yang. All rights reserved.</p>
         </footer>
       </section>
     </main>
@@ -1139,6 +1140,9 @@ function Tracker({ language, onLanguageChange }) {
         </section>
       </div>
 
+      <footer className="tracker-copyright">
+        <p className="site-copyright" lang="en">Copyright © 2026 Jiexi Yang. All rights reserved.</p>
+      </footer>
       {notice ? <div className="notice-toast" role="status"><Check />{notice}</div> : null}
     </main>
   )

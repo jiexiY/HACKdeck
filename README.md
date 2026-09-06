@@ -75,3 +75,8 @@ Saved events stay in the visitor's browser through local storage; the applicatio
 ## Contributing
 
 For a new event or correction, provide an official or organizer source, preserve unknown details, check duplicate IDs and URLs, and archive ended events. Interface contributions should preserve keyboard access, readable labels, responsive behavior, and all three supported languages.
+
+## Copyright
+
+Copyright © 2026 Jiexi Yang. All rights reserved.
+This project is publicly available for viewing and portfolio evaluation only.
