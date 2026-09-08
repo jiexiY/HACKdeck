@@ -1,10 +1,10 @@
 # HACKdeck
 
-[![HACKdeck thumbnail](docs/media/hackdeck-thumbnail.png)](https://hackdeck-app.vercel.app/)
-
 ### Find the right event. See the timeline. Make room to build.
 
 [Explore HACKdeck](https://hackdeck-app.vercel.app/) · [简体中文](README.zh-CN.md) · [Español](README.es.md)
+
+[![HACKdeck thumbnail](docs/media/hackdeck-thumbnail.png)](https://hackdeck-app.vercel.app/)
 
 HACKdeck is a multilingual discovery platform for hackathons, build weeks, and developer programs. It turns scattered event announcements into a connected chronological deck, helping builders compare opportunities before committing their time.
 
