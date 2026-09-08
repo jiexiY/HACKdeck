@@ -1,5 +1,7 @@
 # HACKdeck
 
+[![HACKdeck thumbnail](docs/media/hackdeck-thumbnail.png)](https://hackdeck-app.vercel.app/)
+
 ### Find the right event. See the timeline. Make room to build.
 
 [Explore HACKdeck](https://hackdeck-app.vercel.app/) · [简体中文](README.zh-CN.md) · [Español](README.es.md)
